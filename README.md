@@ -27,31 +27,44 @@ for Energy Transition (OpenTES)._
 13. Laiza Edwiges \- graduanda e desenvolvedora júnior.
 14. IC 6 \- Vaga a ser implementada em caso de necessidade.
 
-O sistema de acompanhamento de projetos do _Github_ será nossa base de acompanhamento e irá centralizar cada etapa de gerenciamento dos projetos.
+O sistema de acompanhamento de projetos do _Github_ será nossa base de
+acompanhamento e irá centralizar cada etapa de gerenciamento dos projetos.
 
 ## Entregas cadastradas no projeto CNPq
 
-Abaixo estão listadas cada uma das entregas cadastradas no formulário de submissão de projeto que foi entregue ao CNPq, destacados os termos que melhor caracterizam cada produto esperado, assim como o status de cada uma.
+Abaixo estão listadas cada uma das entregas cadastradas no formulário de
+submissão de projeto que foi entregue ao CNPq, destacados os termos que melhor
+caracterizam cada produto esperado, assim como o status de cada uma.
 
-1. Relatório com revisão sistemática dos temas envolvidos - Em fase final de implementação;
-2. Plataforma de Co-simulação multidomínio implementada - Em desenvolvimento;
-3. Sistema de Transações Econômicas de Energia integrado à plataforma de co-simulação - Em desenvolvimento;
-4. Sistema de Gestão de Ativos da rede elétrica implementada e integrada à plataforma de co-simulação - À ser desenvolvida;
-5. Sistema de Gerenciamento da Qualidade de Energia Elétrica - Em desenvolvimento;
-6. Sistema de Gerenciamento de Energia pelo lado da Demanda baseado em técnicas de otimização - À ser desenvolvida;
-7. Apresentação de atas e relatórios das atividades desenvolvidas e escrita de artigos científicos - Em desenvolvimento.
+1. Relatório com revisão sistemática dos temas envolvidos - Em fase final de
+   implementação;
+2. Plataforma de Co-simulação multidomínio - Em desenvolvimento;
+3. Sistema de Transações Econômicas de Energia integrado à plataforma de
+   co-simulação - Em desenvolvimento;
+4. Sistema de Gestão de Ativos da rede elétrica integrado à plataforma de
+   co-simulação - À ser desenvolvida;
+5. Sistema de Gerenciamento da Qualidade de Energia Elétrica - Em
+   desenvolvimento;
+6. Sistema de Gerenciamento de Energia pelo lado da Demanda baseado em técnicas
+   de otimização - À ser desenvolvida;
+7. Apresentação de atas e relatórios das atividades desenvolvidas e escrita de
+   artigos científicos - Em desenvolvimento.
 
-É a partir dessas **entregas formais** que times de desenvolvimento foram montados para desenvolver os produtos esperados de cada uma.
+É a partir dessas **entregas formais** que **times de desenvolvimento** foram
+planejados para desenvolver os produtos esperados.
 
-As entregas do projeto podem ser visualizadas de forma gráfica na Figura 1, que foi gerada na fase inicial de composição do projeto.
+As entregas do projeto podem ser visualizadas de forma gráfica na Figura 1, que
+foi gerada na fase inicial de concepção do projeto `OpenTES`.
 
 <img src="diagrama.png" width="80%">
 
-Fig. 1: Representação gráfica das entregas propostas na fase de composição do projeto.
+Fig. 1: Representação gráfica das entregas propostas na fase de composição do
+projeto.
 
 ## Especificação detalhada das entregas do projeto
 
-Teremos que entregar os artefatos de software listados acima, mas também teremos que entregar pelo menos:
+O que se espera é a entrega dos **artefatos de software** listados acima, porém
+outro elementos importantes que também são esperados como entregas são:
 
 - 2 artigos publicados em periódicos científicos,
 - 2 artigos publicados em congressos de nível nacional,
@@ -60,36 +73,57 @@ Teremos que entregar os artefatos de software listados acima, mas também teremo
 
 A situação atual das entregas é a seguinte:
 
-- Para a entrega 1 foi realizada uma revisão bibliográfica sistemática com os resultados organizados em um relatório que vem sendo produzido e revisado pelo grupo.
-- Para as entregas de 2 a 6 temos seguintes componentes de software já desenvolvidos e que precisam ser melhorados, complementados ou adaptados para cada uma das entregas previstas pelo projeto:
-- Sistema de otimização de recursos energéticos em rede que leva em consideração aspectos econômicos, em nível centralizado e distribuído (ADMM), desenvolvido pelo aluno de mestrado Luiz Freire e baseado na biblioteca de fluxo de potência ótimo
-    [PowerModelsDistribution.jl](http://PowerModelsDistribution.jl), ferramenta desenvolvida em Julia.
-- Sistema de co-simulação desenvolvido na tese de doutorado do professor Lucas Silveira, que desenvolve um sistema de energia transativo baseado em otimização com esquema de decomposição dual e geração de DLMP (Distribution Locational Marginal Prices) com participação de múltiplos mercados de energia elétrica. As principais ferramentas de desenvolvimento são PADE na construção de agentes e Mosaik na co-simulação, ambas bibliotecas Python.
-- Sistema de gerenciamento de recursos energéticos distribuídos com controle do tipo Volt/Var desenvolvido no TCC do aluno Caio Lucas. O sistema foi desenvolvido em estratégia de co-simulação utilizando as bibliotecas Python Mosaik, OpenDER, Simbench e Pandapower.
+- Para a entrega 1 foi realizada uma revisão bibliográfica sistemática com os
+  resultados organizados em um relatório que vem sendo produzido e revisado pelo
+  grupo.
+- Para as entregas de 2 a 6 temos seguintes componentes de software já
+  desenvolvidos e que precisam ser melhorados, complementados ou adaptados para
+  cada uma das entregas previstas pelo projeto:
+  - Sistema de otimização de recursos energéticos em rede que leva em
+    consideração aspectos econômicos, em nível centralizado e distribuído
+    (ADMM), desenvolvido pelo aluno de mestrado Luiz Freire e baseado na
+    biblioteca de fluxo de potência ótimo
+    [PowerModelsDistribution.jl](http://PowerModelsDistribution.jl), ferramenta
+    desenvolvida em Julia.
+  - Sistema de co-simulação desenvolvido na tese de doutorado do professor Lucas
+    Silveira, que desenvolve um sistema de energia transativo baseado em
+    otimização com esquema de decomposição dual e geração de DLMP (Distribution
+    Locational Marginal Prices) com participação de múltiplos mercados de
+    energia elétrica. As principais ferramentas de desenvolvimento são PADE na
+    construção de agentes e Mosaik na co-simulação, ambas bibliotecas Python.
+  - Sistema de gerenciamento de recursos energéticos distribuídos com controle
+    do tipo Volt/Var desenvolvido no TCC do aluno Caio Lucas. O sistema foi
+    desenvolvido em estratégia de co-simulação utilizando as bibliotecas Python
+    Mosaik, OpenDER, Simbench e Pandapower.
+
+> [!WARNING] Atenção! Aqui é preciso indicar ainda os endereços dos repositórios
+> onde essas peças de software estão disponibilizadas.
 
 Conforme mencionado nos itens anteriores, com a descrição dos membros do projeto
 e com as entregas previstas, as seguintes atividades são propostas:
 
-- Integrar simuladores com a plataforma de co-simulação e simular a rede de
-  comunicação.
-- Simular a rede elétrica e desenvolver modelo de gerenciamento de recursos
+- **Integrar simuladores** com a plataforma de co-simulação e **simular a rede
+  de comunicação**.
+- **Simular a rede elétrica** e desenvolver modelo de gerenciamento de recursos
   Energéticos distribuídos (RED).
-- Implementar modelo de transações econômicas e modelo de otimização de
+- **Implementar modelo de transações econômicas** e modelo de otimização de
   prosumidor com estratégias de gerenciamento de energia pelo lado da demanda
   (GLD).
-- Desenvolver interface de visualização de dados para realização de análises de
-  Qualidade da Energia Elétrica.
+- **Desenvolver interface de visualização de dados** para realização de análises
+  de Qualidade da Energia Elétrica.
 
-A proposta inicial é que os alunos envolvidos nesse projeto possam ser divididos
-em times de desenvolvimento.  
+> [!TIP] Dica! A proposta inicial é que os pesquisadores envolvidos nesse
+> projeto possam ser divididos em times de desenvolvimento.
+
 Cada time de desenvolvimento será composto preferencialmente por um professor
 supervisor, um ou mais mestrandos e até dois alunos de graduação. Poderão
-ocorrer variações nessas composições conforme a necessidade do projeto.  
+ocorrer variações nessas composições conforme a necessidade do projeto.
+
 Os times de desenvolvimento terão a seguinte denominação, de acordo com a
 temática que irão abordar:
 
-**Time de simulação de comunicação e integração de simuladores em co-simulação
-\- TSCC**  
+## Time de simulação de comunicação e integração de simuladores em co-simulação - TSCC
+
 Breve descrição das atividades a serem realizadas: O principal objetivo desse
 grupo é a prospecção de estratégias de simulação dos impactos dos sistemas de
 comunicação em uma arquitetura de agentes que precisam trocar informações com
@@ -104,8 +138,8 @@ Integrantes:
 - Laiza Edwiges;
 - Rafael Moura;
 
-**Time de modelagem e simulação de transações econômicas e otimização de
-prosumidores \- TTESO**  
+## Time de modelagem e simulação de transações econômicas e otimização de prosumidores \- TTESO
+
 Breve descrição das atividades a serem realizadas: Implementação de modelos de
 mercado em co-simulação. Realização de testes com modelos de mercado tipo Pool e
 tipo P2P. Implementação de modelo de otimização de recursos multienergéticos
@@ -122,7 +156,8 @@ Integrantes:
 - Luiz Freire;
 - Francisco Douglas;
 
-**Time de modelagem e simulação da Rede Elétrica \- TSRE**  
+## Time de modelagem e simulação da Rede Elétrica \- TSRE
+
 Breve descrição das atividades a serem realizadas: Implementação e teste de
 simulador da rede elétrica testando algumas possibilidades como o já integrado
 Pandapower e a possível integração de OpenDSS na plataforma utilizando a
@@ -137,8 +172,8 @@ Integrantes:
 - Caio Lucas;
 - Paulo Victor;
 
-**Time de análise da qualidade de energia elétrica e análise de dados de
-simulação \- TSDQ**  
+## Time de análise da qualidade de energia elétrica e análise de dados de simulação \- TSDQ
+
 Breve descrição das atividades realizadas: Desenvolvimento de simulador para
 visualização e análise de dados gerados a partir da co-simulação da rede
 elétrica, e eventualmente da rede de comunicação. Realizar análises de qualidade
@@ -149,15 +184,15 @@ Integrantes:
 - Luiz Alberto;
 
 Na Figura 2 estão representados de forma gráfica os times de desenvolvimento do
-projeto, com os os nomes dos integrantes já definidos e com os bolsistas
-identificados apenas por numeração.
+projeto, com os os nomes de cada membro e uma indicação gráfica das relações de
+cada um com as ações do projeto.
 
 ![][image1]
 
 Fig. 2: Representação gráfica dos times de desenvolvimento e seus respectivos
 objetos de desenvolvimento.
 
-**Organização dos repositórios no GitHub**
+## Organização dos repositórios no GitHub
 
 Siglas dos times de desenvolvimento:
 
@@ -197,3 +232,6 @@ Também é importante a criação do repositório de organização do projeto pa
 registrar algumas questões organizacionais que envolvam o projeto como um
 todo:  
 [https://github.com/grei-ufc/general-opentes](https://github.com/grei-ufc/general-opentes)
+
+Esse repositório é o repositório em que esse arquivo descritivo ficará
+disponível para todos os membros do projeto.
