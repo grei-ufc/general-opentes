@@ -96,7 +96,7 @@ A situação atual das entregas é a seguinte:
     desenvolvido em estratégia de co-simulação utilizando as bibliotecas Python
     Mosaik, OpenDER, Simbench e Pandapower.
 
-> [!WARNING] Atenção!
+> [!WARNING]
 > Aqui é preciso indicar ainda os endereços dos repositórios
 > onde essas peças de software estão disponibilizadas.
 
@@ -113,7 +113,7 @@ e com as entregas previstas, as seguintes atividades são propostas:
 - **Desenvolver interface de visualização de dados** para realização de análises
   de Qualidade da Energia Elétrica.
 
-> [!TIP] Dica!
+> [!TIP]
 > A proposta inicial é que os pesquisadores envolvidos nesse
 > projeto possam ser divididos em times de desenvolvimento.
 
@@ -188,7 +188,7 @@ Integrantes:
 Na Figura 2 estão representados de forma gráfica os times de desenvolvimento do
 projeto, com os os nomes de cada membro.
 
-![times de Desenvolvimento][images/opentes-01.png]
+![times de Desenvolvimento](images/opentes-01.png)
 
 Fig. 2: Representação gráfica dos times de desenvolvimento e seus respectivos
 objetos de desenvolvimento.
