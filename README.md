@@ -1,12 +1,14 @@
-# Projeto OpenTES
+<div align="center">
+  <img src="logo.svg" width="40%">
+  
+   <h3>Projeto OpenTES</h3>
+   
+   Arcabouço Computacional e Tecnológico Aplicado à Redes Elétricas Inteligentes
+   para a transição Energética (OpenTES).
 
-<img src="logo.png" width="40%">
-
-Arcabouço Computacional e Tecnológico Aplicado à Redes Elétricas Inteligentes
-para a transição Energética (OpenTES).
-
-_Multidomain Computational and Technological Framework applied to Smart Grids
-for Energy Transition (OpenTES)._
+   _Multidomain Computational and Technological Framework applied to Smart Grids
+   for Energy Transition (OpenTES)._
+</div>
 
 ## Plano de Trabalho
 
@@ -56,10 +58,13 @@ planejados para desenvolver os produtos esperados.
 As entregas do projeto podem ser visualizadas de forma gráfica na Figura 1, que
 foi gerada na fase inicial de concepção do projeto `OpenTES`.
 
-<img src="diagrama.png" width="80%">
+<div align="center">
+  <img src="diagrama.png" width="80%">
+  
+   Fig. 1: Representação gráfica das entregas propostas na fase de composição do
+   projeto.
 
-Fig. 1: Representação gráfica das entregas propostas na fase de composição do
-projeto.
+</div>
 
 ## Especificação detalhada das entregas do projeto
 
@@ -188,10 +193,12 @@ Integrantes:
 Na Figura 2 estão representados de forma gráfica os times de desenvolvimento do
 projeto, com os os nomes de cada membro.
 
-![times de Desenvolvimento](images/opentes-01.png)
-
-Fig. 2: Representação gráfica dos times de desenvolvimento e seus respectivos
+<div align="center">
+<img src="images/opentes-01.png" width="50%">
+   
+   Fig. 2: Representação gráfica dos times de desenvolvimento e seus respectivos
 objetos de desenvolvimento.
+</div>
 
 ## Organização dos repositórios no GitHub
 
