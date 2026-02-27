@@ -69,12 +69,18 @@ foi gerada na fase inicial de concepção do projeto `OpenTES`.
 ## Especificação detalhada das entregas do projeto
 
 O que se espera é a entrega dos **artefatos de software** listados acima, porém
-outro elementos importantes que também são esperados como entregas são:
+outro elementos importantes que também são esperadas entregas acadêmicas:
 
 - 2 artigos publicados em periódicos científicos,
 - 2 artigos publicados em congressos de nível nacional,
 - 4 trabalhos de final de curso,
 - 2 dissertação de mestrado e 1 tese de doutorado.
+
+<div align="center">
+<img src="images/opentes-02.png" width="60%">
+   
+   Fig. 2: Representação gráfica dos objetivos do projeto.
+</div>
 
 A situação atual das entregas é a seguinte:
 
@@ -118,18 +124,42 @@ e com as entregas previstas, as seguintes atividades são propostas:
 - **Desenvolver interface de visualização de dados** para realização de análises
   de Qualidade da Energia Elétrica.
 
+<div align="center">
+  <img src="images/opentes-03.png" width="60%">
+</div>
+
+
 > [!TIP]
 > A proposta inicial é que os pesquisadores envolvidos nesse
 > projeto possam ser divididos em times de desenvolvimento.
+
+## Times de Desenvolvimento
 
 Cada time de desenvolvimento será composto preferencialmente por um professor
 supervisor, um ou mais mestrandos e até dois alunos de graduação. Poderão
 ocorrer variações nessas composições conforme a necessidade do projeto.
 
+Na Figura 3 estão representados de forma gráfica os times de desenvolvimento do
+projeto, com os os nomes de cada membro.
+
+<div align="center">
+<img src="images/opentes-01.png" width="50%">
+   
+   Fig. 3: Representação gráfica dos times de desenvolvimento e seus respectivos
+objetos de desenvolvimento.
+</div>
+
+Siglas dos times de desenvolvimento:
+
+1. TSCC: Comunicação e Co-simulação.
+2. TTESO: Sistemas Transativos e Otimização.
+3. TSRE: Rede Elétrica e Recursos Energéticos distribuídos.
+4. TSDQ: Visualização de Dados e Qualidade de Energia Elétrica.
+
 Os times de desenvolvimento terão a seguinte denominação, de acordo com a
 temática que irão abordar:
 
-## Time de simulação de comunicação e integração de simuladores em co-simulação - TSCC
+### Time de simulação de comunicação e integração de simuladores em co-simulação - TSCC
 
 Breve descrição das atividades a serem realizadas: O principal objetivo desse
 grupo é a prospecção de estratégias de simulação dos impactos dos sistemas de
@@ -145,7 +175,11 @@ Integrantes:
 - Laiza Edwiges;
 - Rafael Moura;
 
-## Time de modelagem e simulação de transações econômicas e otimização de prosumidores \- TTESO
+<div align="center">
+  <img src="images/opentes-04.png" width="60%">
+</div>
+
+### Time de modelagem e simulação de transações econômicas e otimização de prosumidores \- TTESO
 
 Breve descrição das atividades a serem realizadas: Implementação de modelos de
 mercado em co-simulação. Realização de testes com modelos de mercado tipo Pool e
@@ -163,7 +197,12 @@ Integrantes:
 - Luiz Freire;
 - Francisco Douglas;
 
-## Time de modelagem e simulação da Rede Elétrica \- TSRE
+<div align="center">
+  <img src="images/opentes-05.png" width="60%">
+</div>
+
+
+### Time de modelagem e simulação da Rede Elétrica \- TSRE
 
 Breve descrição das atividades a serem realizadas: Implementação e teste de
 simulador da rede elétrica testando algumas possibilidades como o já integrado
@@ -179,7 +218,12 @@ Integrantes:
 - Caio Lucas;
 - Paulo Victor;
 
-## Time de análise da qualidade de energia elétrica e análise de dados de simulação \- TSDQ
+<div align="center">
+  <img src="images/opentes-07.png" width="60%">
+</div>
+
+
+### Time de análise da qualidade de energia elétrica e análise de dados de simulação \- TSDQ
 
 Breve descrição das atividades realizadas: Desenvolvimento de simulador para
 visualização e análise de dados gerados a partir da co-simulação da rede
@@ -190,24 +234,12 @@ Integrantes:
 - Raquel Gregory;
 - Luiz Alberto;
 
-Na Figura 2 estão representados de forma gráfica os times de desenvolvimento do
-projeto, com os os nomes de cada membro.
-
 <div align="center">
-<img src="images/opentes-01.png" width="50%">
-   
-   Fig. 2: Representação gráfica dos times de desenvolvimento e seus respectivos
-objetos de desenvolvimento.
+  <img src="images/opentes-06.png" width="60%">
 </div>
 
-## Organização dos repositórios no GitHub
 
-Siglas dos times de desenvolvimento:
-
-1. TSCC: Comunicação e Co-simulação.
-2. TTESO: Sistemas Transativos e Otimização.
-3. TSRE: Rede Elétrica e Recursos Energéticos distribuídos.
-4. TSDQ: Visualização de Dados e Qualidade de Energia Elétrica.
+### Organização dos repositórios no GitHub
 
 Os seguintes repositórios estarão integrados a cada time de desenvolvimento:
 
