@@ -42,6 +42,7 @@ Após essa reorganização, realizamos novos testes utilizando o Docker Compose 
   
 - **Bloqueios:**
  No presente momento, o conteiner Mosaik envia o cenario para o conteiner Cosima, este recebe o cenŕio e envia para o OmNET++ porém durante a simulação ocorre o seguinte erro:
+
 inet-4.2.2:~/models$ python3 cosima_omnetpp_server.py
 2026-03-06 13:10:59.900719  | WARNING | coupled simulation: Connection to OMNeT++ failed! (127.0.0.1:4242)
 OMNeT++ Discrete Event Simulation  (C) 1992-2019 Andras Varga, OpenSim Ltd.
