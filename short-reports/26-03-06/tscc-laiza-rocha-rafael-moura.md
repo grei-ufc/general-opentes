@@ -40,7 +40,38 @@ Após essa reorganização, realizamos novos testes utilizando o Docker Compose 
 
 - **Progresso atual:** 80% [████████░] → 100%
   
-- **Bloqueios:** 
+- **Bloqueios:**
+ No presente momento, o conteiner Mosaik envia o cenario para o conteiner Cosima, este recebe o cenŕio e envia para o OmNET++ porém durante a simulação ocorre o seguinte erro:
+inet-4.2.2:~/models$ python3 cosima_omnetpp_server.py
+2026-03-06 13:10:59.900719  | WARNING | coupled simulation: Connection to OMNeT++ failed! (127.0.0.1:4242)
+OMNeT++ Discrete Event Simulation  (C) 1992-2019 Andras Varga, OpenSim Ltd.
+Version: 5.6.2, build: 200518-aa79d0918f, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+Setting up Cmdenv...
+
+Loading NED files from ../inet4/src/inet:  831
+Loading NED files from /root/models/simulte/src:  52
+Loading NED files from /root/models/cosima_omnetpp_project:  20
+
+Preparing for running configuration SimpleNetworkTCP, run #0...
+Assigned runID=SimpleNetworkTCP-0-20260306-13:11:00-331
+Setting up network "networks.SimpleNetwork"...
+Initializing...
+
+Running simulation...
+** Event #0   t=0   Elapsed: 1.6e-05s (0m 00s)
+     Speed:     ev/sec=0   simsec/sec=0   ev/simsec=0
+     Messages:  created: 336   present: 336   in FES: 4
+2026-03-06 13:11:00.901143  | INFO    | coupled simulation: Connection to OMNeT++ successful! (127.0.0.1:4242)
+2026-03-06 13:11:00.901 | INFO     | mosaik.scenario:start:255 - Starting "SimpleAgent" as "SimpleAgent-0" ...
+2026-03-06 13:11:00.904 | INFO     | mosaik.scenario:start:255 - Starting "SimpleAgent" as "SimpleAgent-1" ...
+2026-03-06 13:11:00.904 | INFO     | mosaik.scenario:start:255 - Starting "CommunicationSimulator" as "CommunicationSimulator-0" ...
+4243/tcp:              328
+Killed
+
+Esta saida é do conteiner cosima e informa erro no "CommunicationSimulator"
+
 ## 📅 Prazo Estimado 
 
 - Data de entrega pretendida: 13/03/2026
