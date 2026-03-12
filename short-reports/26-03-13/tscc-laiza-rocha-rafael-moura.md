@@ -18,10 +18,11 @@ A partir das abordagens paralelas desenvolvidas pela equipe (Laiza: containeriza
 3. A comunicação ocorre via sockets ZMQ na porta 5555
 4. Dados são injetados em tempo real (`15.0` no `data_in` do `node_0`)
 5. Resultados são coletados e salvos em `results.csv`
+
 Tal estrutura está visualmente representada na figura abaixo:
 
 <div align="center">
-  <img src="Images/esquematico.jpeg" alt="Arquitetura Mosaik e OMNeT" width="700">
+  <img src="Images/esquematico.jpg" alt="Arquitetura Mosaik e OMNeT" width="700">
   <p><i>Figura: Arquitetura de Co-Simulação Mosaik-OMNeT.</i></p>
 </div>
 
