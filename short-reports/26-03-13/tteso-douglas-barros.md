@@ -9,7 +9,7 @@ assignees: "[Douglas Barros]"
 
 ## 📌 Descrição da Atividade
 
-Semana de avanço massivo e consolidação estrutural na atualização do framework PADE (Python Agent DEvelopment) para o Python 3.12.11. A atividade abrangeu todas as frentes do framework: iniciou-se com a resolução de bugs críticos no Core (falhas na propagação da tabela de agentes e crash no AMS devido a funções inexistentes), passou pela estabilização e validação completa do novo sistema de Logging em CSV (resolvendo vazamento de binários/hexadecimais no Sniffer) e culminou na adaptação total de todo o acervo de testes. Validamos desde os exemplos base (Protocolos FIPA 1 a 6 e scripts de variação) até integrações assíncronas de altíssima complexidade do GREI, como o orquestrador Mosaik API 3.0+ e envio de Matrizes Numpy (IEEE 13-Bus). Finalizamos a semana com a reescrita de 100% da documentação oficial.
+Semana de avanço massivo e consolidação estrutural na atualização do framework PADE (Python Agent DEvelopment) para o Python 3.12.11. A atividade abrangeu todas as frentes do framework: iniciou-se com a resolução de bugs críticos no Core (falhas na propagação da tabela de agentes e crash no AMS devido a funções inexistentes), passou pela estabilização e validação completa do novo sistema de Logging em CSV (resolvendo vazamento de binários/hexadecimais no Sniffer) e culminou na adaptação total de todo o acervo de testes. Foi validado desde os exemplos base (Protocolos FIPA 1 a 6 e scripts de variação) até integrações assíncronas de altíssima complexidade do GREI, como o orquestrador Mosaik API 3.0+ e envio de Matrizes Numpy (IEEE 13-Bus). Por último foi realizado a reescrita da documentação oficial do PADE para as instruções novas adicionadas e as antigas removidas.
 
 ## 🛠 Contexto Técnico
 
@@ -46,9 +46,9 @@ Semana de avanço massivo e consolidação estrutural na atualização do framew
 
 ## 📈 Resultados / Dificuldades
 
-- **Progresso atual:** 98%
+- **Progresso atual:** 95%
 
-![Progress](https://progress-bar.xyz/98/)
+![Progress](https://progress-bar.xyz/95/)
 
 ### ✅ **Avanços da Semana (Mapeamento de Testes)**
 
@@ -72,15 +72,15 @@ Semana de avanço massivo e consolidação estrutural na atualização do framew
 
 ### 🔧 **Correções Arquiteturais (Destaques)**
 
-1. **O Fim dos Hexadecimais no Sniffer:** Criamos o `format_message_content` em `utility.py` para interceptar e decodificar dados binários (`pickle`) da rede, salvando texto limpo no `events.csv` ao invés de derrubar o gerador com *bytes brutals*.
-2. **Protocolo Python 3.12 Twisted (Bytes):** O driver legado travava ao enviar sinais Int na rede. Reestruturamos o núcleo para disparar pacotes vazios (`b''`) mantendo a sincronia via exceções `StopIteration`.
+1. **O Fim dos Hexadecimais no Sniffer:** Foi criado o `format_message_content` em `utility.py` para interceptar e decodificar dados binários (`pickle`) da rede, salvando texto limpo no `events.csv` ao invés de derrubar o gerador com *bytes brutals*.
+2. **Protocolo Python 3.12 Twisted (Bytes):** O driver legado travava ao enviar sinais Int na rede. Reestruturou-se o núcleo para disparar pacotes vazios (`b''`) mantendo a sincronia via exceções `StopIteration`.
 3. **Resolução de Deadlock no Mosaik:** O PADE travava aos 20% porque os agentes requisitavam progresso e dados (`get_progress` + `get_data_async`) no mesmo passo. O *generator wrapper* do driver foi reescrito com um `while True` para absorver requisições múltiplas sem quebrar o tempo da simulação.
 
 ### ⚠️ **Dificuldades Enfrentadas e Superadas**
 
 1. **`message.copy()` Crash:** O código do AMS tentava duplicar mensagens usando um método obsoleto que foi removido, sendo refeito via `create_reply()` e instâncias nativas.
-2. **Propagação FIPA-Subscribe do AMS:** O AMS não notificava a criação de novos agentes automaticamente na versão 3.12, travando a inicialização de exemplos complexos como o do Relógio/Tempo. Modificamos a base do `new_ams.py` para forçar `NOTIFY`.
-3. **Logs do Mosaik "Invisíveis":** Como o Mosaik usa TCP puro (JSON), o Sniffer ignorava o tráfego. Resolvemos criando um agente tradutor que empacota o JSON recebido em `FIPA-ACL` e dispara para si mesmo, forçando a geração do Log CSV.
+2. **Propagação FIPA-Subscribe do AMS:** O AMS não notificava a criação de novos agentes automaticamente na versão 3.12, travando a inicialização de exemplos complexos como o do Relógio/Tempo. Além disso, foi modificado a base do `new_ams.py` para forçar `NOTIFY`.
+3. **Logs do Mosaik "Invisíveis":** Como o Mosaik usa TCP puro (JSON), o Sniffer ignorava o tráfego. Foi resolvido criando um agente tradutor que empacota o JSON recebido em `FIPA-ACL` e dispara para si mesmo, forçando a geração do Log CSV.
 
 ## 📅 Prazo Estimado
 
@@ -117,8 +117,8 @@ Semana de avanço massivo e consolidação estrutural na atualização do framew
 
 ## 🎯 Conclusão
 
-**Semana de Ínumeros Testes e restante das Adaptações.** Entramos na semana com o núcleo do framework quebrando devido a incompatibilidades profundas do Python 3.12 (Twisted Bytes, geradores e falhas de I/O de banco de dados). 
+**Semana de Ínumeros Testes e restante das Adaptações.** No início  da semana, o núcleo do framework estava quebrando devido a incompatibilidades profundas do Python 3.12 (Twisted Bytes, geradores e falhas de I/O de banco de dados). 
 
-Conseguimos não apenas sanar todos os *core bugs*, validar a persistência perfeita do Logging em CSV, adaptar mais de 10 scripts clássicos da versão v1, como também integramos o framework às modernas ferramentas de Co-Simulação do GREI (Mosaik 3.0) e análise de dados (Pandas). A plataforma PADE respira modernidade, está incrivelmente veloz, e a sua documentação foi reconstruída para a nova geração de pesquisadores.
+Foi resolvido os *core bugs*, validou-se a persistência perfeita do Logging em CSV, adaptado mais de 10 scripts clássicos da versão v1, como também integraram o framework às modernas ferramentas de Co-Simulação do GREI (Mosaik 3.0) e análise de dados (Pandas). Por último, documentação do PADE foi reconstruída com as novas funcionalidades e remoção das antigas.
 
-**Próxima semana:** Assim que a dependência `mygrid` for fornecida, faremos a batida de martelo no IEC-61850 e realizaremos o merge definitivo da versão 2.2.6! 🚀
+**Próxima semana:** Assim que a dependência `mygrid` for fornecida, será feito o teste no IEC-61850, além da realização do merge definitivo da versão 2.2.6! 
