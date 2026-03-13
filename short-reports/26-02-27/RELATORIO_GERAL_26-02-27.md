@@ -101,3 +101,119 @@ A maior parte das entregas aponta prazo para **06/03/2026**.
   experimentação inicial** do OpenDER, devendo avançar com execução prática dos
   exemplos.
 
+## Proposições de Issues
+
+Segue proposição de novas issues a serem abertas no repositório geradas por IA
+com base nos short-reports de 27-02-26:
+
+A seguir estão **possíveis issues** (sugestões) para abrir no repositório
+**`grei-ufc/general-opentes`**, de forma a acompanhar o que ficou em aberto nos
+mini relatórios da pasta `short-reports/26-02-27` (ref `033fe5d...`).
+
+---
+
+## Épico (opcional) para centralizar
+
+1. **[EPIC] Acompanhamento short-reports 26-02-27 (integrações, ferramentas e
+   migrações)**
+   - **Descrição:** issue guarda-chuva com links para as issues abaixo;
+     checklist de entregas; status semanal.
+
+---
+
+## TSCC — Laiza Rocha (OMNeT++/COSIMA/MOSAik)
+
+1. **Corrigir Dockerfile / inicialização do container OMNeT++ (COSIMA +
+   MOSAIK)**
+   - **Aceite:** build sem erros; container sobe; logs limpos; documentação
+     mínima do motivo do problema e solução.
+2. **Validar comunicação TCP MOSAIK ↔ OMNeT++ (após container estável)**
+   - **Aceite:** teste de conectividade e troca de mensagens (ex.: handshake +
+     envio/recebimento) reproduzível via script.
+3. **Documentar setup do OMNeT++ container (dependências, build, execução)**
+   - **Aceite:** README curto com comandos `docker build/run`, variáveis e
+     troubleshooting.
+
+---
+
+## TSCC — Rafael Moura (rede entre containers + aplicação)
+
+1. **Implementar troca de mensagens entre dois containers (nível aplicação)**
+   - **Aceite:** exemplo mínimo cliente/servidor (TCP/UDP/HTTP—o que o projeto
+     usar) com logs e instruções para reproduzir.
+2. **Padronizar configuração de rede/hosts/ports nos containers (docker
+   compose)**
+   - **Aceite:** `docker compose up` sobe tudo; serviços se resolvem por nome;
+     portas documentadas.
+3. **Guia de troubleshooting: permissões no Docker daemon
+   (/var/run/docker.sock)**
+   - **Aceite:** doc com causas comuns, correções recomendadas e impacto de
+     segurança.
+
+---
+
+## TSDQ — Luiz Alberto (OpenDSS + Streamlit/Pandas)
+
+1. **Adicionar monitores de potência no pipeline OpenDSS (além de
+   tensão/corrente)**
+   - **Aceite:** dados de potência exportados; colunas/unidades definidas;
+     exemplo de simulação incluído.
+2. **Corrigir/normalizar exportação de CSV do OpenDSS para formato padrão de
+   entrada**
+   - **Aceite:** export gera **um** conjunto de CSVs (ou um CSV) no formato
+     esperado; compatível com o fluxo de co-simulação.
+3. **Ajustar ferramenta Streamlit para ler o novo formato (correntes +
+    potências)**
+
+- **Aceite:** app carrega sem gambiarras; valida schema; plots/tabelas corretos.
+
+1. **Evoluir “Comparador Universal” (auditoria) com validações e relatórios**
+
+- **Aceite:** compara datasets com tolerâncias, aponta divergências e exporta
+  relatório (CSV/JSON/HTML).
+
+---
+
+## TSRE — Paulo Victor (OpenDER / IEEE 1547)
+
+1. **Executar exemplos do OpenDER e registrar resultados (passo a passo)**
+
+- **Aceite:** ambiente criado; exemplos rodam; outputs salvos; notas do que
+  funciona/não funciona.
+
+1. **Mapear requisitos IEEE 1547-2018 relevantes para os casos do projeto**
+
+- **Aceite:** lista curta (itens aplicáveis) + como seriam
+  parametrizados/testados no OpenDER.
+
+---
+
+## TTESO — Douglas Barros (PADE Python 3.12 + logs)
+
+1. **Investigar e corrigir resíduos/bytes hex no `events.csv` do Sniffer**
+
+- **Aceite:** `events.csv` sem lixo; encoding definido; testes cobrindo
+  mensagens com caracteres especiais/binary payload.
+
+1. **Adicionar testes automatizados para logging (show-logs/export-logs)**
+
+- **Aceite:** testes que validam geração, filtros e export; pipeline CI (se
+  existir) passando.
+
+1. **Documentar migração do PADE para Python 3.12.11 e mudanças incompatíveis**
+
+- **Aceite:** notas de migração + checklist para outros devs; dependências
+  removidas e substituições.
+
+1. **Testar PADE em cenário mais realista (multiagentes + carga)**
+
+- **Aceite:** script/benchmark simples; métricas (tempo, tamanho de logs,
+  estabilidade); resultados registrados.
+
+---
+
+## Pergunta rápida (para eu refinar a lista)
+
+Você quer que eu organize essas issues em **labels/sprints** (ex.:
+`area:docker`, `area:opendss`, `area:pade`, `type:epic`, `priority:*`) e já
+sugira **títulos + descrições prontas** (copiar/colar) no padrão do repositório?
