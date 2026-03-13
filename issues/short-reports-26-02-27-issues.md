@@ -1,4 +1,4 @@
-# Propostas de Issues — short-reports/26-02-27 (ref 033fe5d250073f12482c44796c8818fdf4cbee4a)
+# Propostas de Issues — short-reports/26-02-27
 
 Este documento lista **propostas de issues** para abrir no repositório
 `grei-ufc/general-opentes`, com o objetivo de acompanhar as atividades pendentes
