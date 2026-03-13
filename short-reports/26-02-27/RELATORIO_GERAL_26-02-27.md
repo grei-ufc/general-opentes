@@ -1,4 +1,4 @@
-## Relatório geral (resumo) — Pasta `short-reports/26-02-27`
+# Relatório geral (resumo) — Pasta `short-reports/26-02-27`
 
 A pasta reúne **5 mini relatórios** com atividades técnicas em andamento,
 majoritariamente em **Python** e **Docker**, ligadas ao ecossistema OpenTES e
@@ -11,6 +11,8 @@ ferramentas associadas. No geral, os trabalhos se dividem em:
 (iii) **estudo/atualização de frameworks e modelos**.
 
 A maior parte das entregas aponta prazo para **06/03/2026**.
+
+## Resumo dos relatórios produzidos pelos desenvolvedores
 
 ### 1) TSCC — Laiza Rocha: container OMNeT++ (MOSAIK + OMNeT++ + COSIMA)
 
@@ -66,7 +68,7 @@ A maior parte das entregas aponta prazo para **06/03/2026**.
 - **Status:** ~**45%**.
 - **Prazo pretendido:** **06/03/2026**.
 
-### 5) TTESO — Douglas Barros: atualização do PADE para Python 3.12.11 + logging CSV
+### 5) TTESO — Douglas Barros: atualização do PADE para Python 3.12 + logging CSV
 
 - **Objetivo:** migrar o **PADE** de Python **3.8 → 3.12.11**, removendo
   dependências obsoletas (ex.: Flask/SQLAlchemy/Alchimia) e implementando **novo
@@ -83,7 +85,7 @@ A maior parte das entregas aponta prazo para **06/03/2026**.
 
 ---
 
-## Síntese
+## Síntese dos mini relatórios da semana
 
 - **Infraestrutura/containers:** há um eixo forte em **Docker e ambiente
   distribuído**:
@@ -103,7 +105,7 @@ A maior parte das entregas aponta prazo para **06/03/2026**.
 
 ## Proposições de Issues
 
-Segue proposição de novas issues a serem abertas no repositório geradas por IA
+Segue proposição (gerada por IA) de novas issues a serem abertas no repositório
 com base nos short-reports de 27-02-26:
 
 A seguir estão **possíveis issues** (sugestões) para abrir no repositório
@@ -112,7 +114,7 @@ mini relatórios da pasta `short-reports/26-02-27` (ref `033fe5d...`).
 
 ---
 
-## Épico (opcional) para centralizar
+### Épico (opcional) para centralizar
 
 1. **[EPIC] Acompanhamento short-reports 26-02-27 (integrações, ferramentas e
    migrações)**
@@ -121,7 +123,7 @@ mini relatórios da pasta `short-reports/26-02-27` (ref `033fe5d...`).
 
 ---
 
-## TSCC — Laiza Rocha (OMNeT++/COSIMA/MOSAik)
+### TSCC — Laiza Rocha (OMNeT++/COSIMA/MOSAik)
 
 1. **Corrigir Dockerfile / inicialização do container OMNeT++ (COSIMA +
    MOSAIK)**
@@ -136,7 +138,7 @@ mini relatórios da pasta `short-reports/26-02-27` (ref `033fe5d...`).
 
 ---
 
-## TSCC — Rafael Moura (rede entre containers + aplicação)
+### TSCC — Rafael Moura (rede entre containers + aplicação)
 
 1. **Implementar troca de mensagens entre dois containers (nível aplicação)**
    - **Aceite:** exemplo mínimo cliente/servidor (TCP/UDP/HTTP—o que o projeto
@@ -152,7 +154,7 @@ mini relatórios da pasta `short-reports/26-02-27` (ref `033fe5d...`).
 
 ---
 
-## TSDQ — Luiz Alberto (OpenDSS + Streamlit/Pandas)
+### TSDQ — Luiz Alberto (OpenDSS + Streamlit/Pandas)
 
 1. **Adicionar monitores de potência no pipeline OpenDSS (além de
    tensão/corrente)**
@@ -163,7 +165,7 @@ mini relatórios da pasta `short-reports/26-02-27` (ref `033fe5d...`).
    - **Aceite:** export gera **um** conjunto de CSVs (ou um CSV) no formato
      esperado; compatível com o fluxo de co-simulação.
 3. **Ajustar ferramenta Streamlit para ler o novo formato (correntes +
-    potências)**
+   potências)**
 
 - **Aceite:** app carrega sem gambiarras; valida schema; plots/tabelas corretos.
 
@@ -174,7 +176,7 @@ mini relatórios da pasta `short-reports/26-02-27` (ref `033fe5d...`).
 
 ---
 
-## TSRE — Paulo Victor (OpenDER / IEEE 1547)
+### TSRE — Paulo Victor (OpenDER / IEEE 1547)
 
 1. **Executar exemplos do OpenDER e registrar resultados (passo a passo)**
 
@@ -188,7 +190,7 @@ mini relatórios da pasta `short-reports/26-02-27` (ref `033fe5d...`).
 
 ---
 
-## TTESO — Douglas Barros (PADE Python 3.12 + logs)
+### TTESO — Douglas Barros (PADE Python 3.12 + logs)
 
 1. **Investigar e corrigir resíduos/bytes hex no `events.csv` do Sniffer**
 
@@ -209,11 +211,3 @@ mini relatórios da pasta `short-reports/26-02-27` (ref `033fe5d...`).
 
 - **Aceite:** script/benchmark simples; métricas (tempo, tamanho de logs,
   estabilidade); resultados registrados.
-
----
-
-## Pergunta rápida (para eu refinar a lista)
-
-Você quer que eu organize essas issues em **labels/sprints** (ex.:
-`area:docker`, `area:opendss`, `area:pade`, `type:epic`, `priority:*`) e já
-sugira **títulos + descrições prontas** (copiar/colar) no padrão do repositório?
