@@ -31,7 +31,7 @@ Houve o foco na reestruturação arquitetural e na inclusão de novas funcionali
 
 - **Progresso atual:** 97%
   
-![Progress](https://progress-bar.xyz/75/)
+![Progress](https://progress-bar.xyz/97/)
 - **Bloqueios:** Problemas na plotagem de valores muito pequenos é apresentado apenas como uma linha reta. 
 
 ## 📎Próxima(s) Atividade(s)
