@@ -8,7 +8,8 @@ assignees: "[Paulo Victor Pereira Lima]"
 ## 📌 Descrição da Atividade
 
 > Estudo dos códigos de simulação da rede elétrica com Mosaik + OpenDSS e implementação de geradores FV em diferentes
-> barras da rede IEEE 123 Barras"
+> barras da rede IEEE 123 Barras. Neste teste preliminar foram adicionados 8 geradores FV em diferentes barras e foram
+> monitoradas 3 barras, mais o alimentador. Os resultados se mostraram satisfatórios."
 
 ## 🛠 Contexto Técnico
 
