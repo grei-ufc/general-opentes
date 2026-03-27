@@ -39,7 +39,7 @@ Além das correções, houve um esforço importante de documentação interna do
 
 ## 📈 Resultados / Dificuldades
 
-- **Progresso atual:** 100%
+- **Progresso atual:** 92%
 
 ![Progress](https://progress-bar.xyz/92/)
 
