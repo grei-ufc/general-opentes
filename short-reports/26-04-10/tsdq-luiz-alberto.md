@@ -18,6 +18,10 @@ Foi implementado o uso do uv no projeto base destinado ao desenvolvimento do art
 - **Branch de Trabalho:** `(https://github.com/grei-ufc/CBA-2026-Quality-Analysis/branches)`
 - **Requisito Associado:** (https://github.com/grei-ufc/CBA-2026-Quality-Analysis)
 
+A Figura abaixo apresenta o ambiente de desenvolvimento configurado no VS Code com suporte a LaTeX.
+
+![VS Code com LaTeX](Images/vsccomlatex.png)
+
 ## ✅ Checklist de Entrega
 
 - [ ] Código documentado (Docstrings).
