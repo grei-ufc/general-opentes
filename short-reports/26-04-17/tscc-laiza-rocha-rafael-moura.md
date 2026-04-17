@@ -24,9 +24,22 @@ O presente relatório detalha os avanços em duas frentes distintas de pesquisa:
 *Foco: Otimização da interface de comunicação e eliminação de instabilidades.*
 
 * **O Problema (sim-warning):** Inicialmente, o Mosaik tratava os pacotes de comunicação, isso gerava warnings constantes de dados ausentes, como se um agente estivesse inativo e criava o risco real de perda de pacotes caso as mensagens chegassem fora do ciclo fixo de leitura da Interface.
+  <div align="center">
+  <img src="Image/sim-warning.png" alt="AVISO" width="700">
+  <p><i>Figura: Print da tela com o terminal do Mosaik dando Warning.</i></p>
+</div>
+
 * **A Solução (sim-withoutwarning.png):** A arquitetura foi reconfigurada para o **modo hybrid**. Os sinais de comunicação foram explicitamente classificados como eventos discretos (*non-persistent*).
+  <div align="center">
+  <img src="Image/simu-withoutwarning.png" alt="FINAL" width="700">
+  <p><i>Figura: Print da tela após correções.</i></p>
+</div>
 * **Mecanismo de Gatilho:** A Interface passou a usar esses eventos como gatilhos (**trigger**) para despertar instantaneamente sob demanda. O resultado foi a eliminação completa dos warnings e a garantia de zero perda de dados.
 * **Arquitetura atualizada:** Atualização completa do ambiente para **Mosaik 3.6.0**, **PADE** e **Python 3.10.20**.
+  <div align="center">
+    <img src="Image/sim.png" alt="SIM" width="700">
+    <p><i>Figura: Print da tela com o terminal do Mosaik mostrando as atuais versões.</i></p>
+  </div>
 
 ---
 
