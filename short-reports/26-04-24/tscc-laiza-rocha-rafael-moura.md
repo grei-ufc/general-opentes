@@ -1,64 +1,61 @@
 ---
-name: "🚀 Relatório de Progresso"
-about: Avanços na Integração OMNeT++ e Mosaik via ZeroMQ para Co-simulação
-title: "[OPENTES - TSCC] Integração e Roteamento de Mensagens FIPA-ACL via OMNeT++ e Mosaik"
-labels: pesquisa, software, integração
+name: "🚀 Relatório de Progresso - Finalização da Integração"
+about: Conclusão da Co-simulação Bidirecional OMNeT++, Mosaik e PADE
+title: "[OPENTES - TSCC] Conclusão: Comunicação Bidirecional em Lock-step com Física de Rede Dinâmica"
+labels: pesquisa, software, integração, concluído
 assignees: "Laiza Edwigens Rocha Silva e Rafael dos Santos Moura"
 ---
 
 ## 📌 Descrição da Atividade
 
-O presente relatório detalha os avanços cruciais na consolidação do ambiente Dockerizado de co-simulação (Mosaik + PADE + OMNeT++). O foco esteve na resolução de gargalos de rede entre os contentores, na adaptação do C++ para o tráfego de Strings (JSON/FIPA-ACL) e na estabilização da topologia do Mosaik para capturar comunicações e exportar a telemetria corretamente.
+Este relatório marca a conclusão da fase de integração da infraestrutura de co-simulação. Superamos o desafio da comunicação unidirecional, estabelecendo um ciclo completo de "Ping-Pong" entre agentes PADE, mediado pelo motor C++ do OMNeT++. A principal evolução reside na transição de atrasos fixos para um **modelo matemático de latência baseado em largura de banda e tamanho de pacote**, validando a precisão científica do ambiente.
 
 ---
 
-### 1. Integração OMNeT++ / Mosaik (Via ZeroMQ)
-*Foco: Infraestrutura de transporte, lógica de atraso de rede e estabilidade do Docker.*
+### 1. Física de Rede e Sincronismo C++ (OMNeT++)
+*Foco: Precisão matemática da latência e integridade das mensagens.*
 
-* **Transporte de Strings JSON (FIPA-ACL):** O `MosaikBridge.cc` foi reescrito para analisar corretamente atributos do tipo string vindos do Mosaik. O código C++ agora varre todas as fontes conectadas à porta `val_in` para garantir que a mensagem real do agente seja capturada, ignorando pacotes vazios.
-* **Emulação de Nuvem e Atraso (Self-Message):** O `NetworkNode.cc` foi atualizado para emular o tráfego real sem a necessidade de múltiplos nós. O nó calcula o tamanho da string FIPA-ACL, gera um pacote dinâmico e agenda a sua própria entrega no futuro (`scheduleAt`) para simular os 15ms de latência da rede, expondo a mensagem na porta `val_out` em seguida.
-* **Desbloqueio de Variáveis em Runtime:** Resolvido o bloqueio de segurança do OMNeT++ que impedia o Mosaik de injetar dados em tempo de execução. O ficheiro `NetworkNode.ned` foi corrigido com a sintaxe exata da tag `@mutable` (`string val_in @mutable = default("");`), permitindo a comunicação contínua no modelo de lock-step.
+* **Cálculo Dinâmico de Latência:** O `NetworkNode.cc` foi evoluído para calcular a latência total como: `Atraso de Propagação (10ms) + Atraso de Transmissão (Bits / Largura de Banda)`. Isso resultou em latências variáveis (ex: 28,08ms para 113 bytes vs. 26,16ms para 101 bytes), provando a sensibilidade do simulador ao payload.
+* **Proteção de Sobrescrita (MosaikBridge):** Implementada uma trava lógica no `MosaikBridge.cc` para ignorar strings vazias vindas do Mosaik em passos ociosos. Isso impediu que mensagens legítimas em processamento no OMNeT++ fossem apagadas por "cabos vazios" em instantes subsequentes.
+* **Injeção em Tempo Inicial (t=0):** Refatoração da função `initialize()` na ponte C++ para ler os inputs do Mosaik logo no comando de `step 0`, garantindo que a primeira mensagem do Agente A não fosse descartada no arranque.
 
-### 2. Estabilização da Arquitetura Mosaik e Docker
-*Foco: Resolução de dependências cíclicas e comunicação entre contentores.*
+### 2. Inteligência dos Agentes e Sincronismo Temporal (PADE)
+*Foco: Alinhamento entre o tempo simulado (Mosaik) e o tempo real (Python).*
 
-* **Correção do Host e Volumes Docker:** A inicialização do PADE foi reconfigurada para expor a interface no IP `0.0.0.0` (rompendo a barreira do `localhost`), permitindo a conexão do Mosaik. O mapeamento de volumes foi alterado para mapeamento de pasta (`./pade_agents:/app/agents`), estabilizando o build e evitando a criação de "pastas fantasma" pelo Docker.
-* **Arquitetura de Telemetria Linear (Collector):** Para evitar o erro crítico de dependência cíclica do Mosaik (`ScenarioError: Your scenario contains cycles`) e a complexidade instável da flag `time_shifted`, a arquitetura do orquestrador (`first.py`) foi redesenhada. Os agentes injetam dados na rede OMNeT++, que por sua vez entrega os resultados de latência e a mensagem final diretamente ao **Collector**, gerando um ficheiro `.csv` de forma linear e estável.
+* **Remoção de Atrasos de "Wall-Clock":** Eliminamos o uso de `reactor.callLater` (tempo real) nos agentes. A lógica de resposta agora é instantânea no nível do código Python, permitindo que o Mosaik capture a reação do Agente B dentro do mesmo ciclo de simulação, respeitando os "ticks" do relógio central.
+* **Loop Bidirecional Infinito:** Implementada lógica de reciprocidade na função `receber_mensagem_da_rede`. O Agente A agora reage às respostas do Agente B, criando um fluxo contínuo de tráfego que satura a rede até o fim do tempo de simulação (`until=20`).
+
+### 3. Visualização Automática e Telemetria
+*Foco: Extração de evidências para a tese.*
+
+* **Dashboard de Performance:** O script `plot_results.py` foi automatizado via Docker Compose. Agora, ao fim de cada execução, o sistema gera automaticamente um gráfico de dois painéis correlacionando o **Tamanho do Pacote** com a **Latência Calculada**, fornecendo prova visual da integração.
 
 ---
 
 ## 🛠 Contexto Técnico
 * **Linguagem/Ferramenta:** (X) Python | (X) C++ | (X) Docker | (X) ZeroMQ | (X) PADE
 * **Repositório Principal**: [tscc-com-opentes](https://github.com/grei-ufc/tscc-com-opentes)
-* **Ambiente:** `development`
+* **Status do Ambiente:** `Stable / Production-Ready for Scenarios`
 
 ## ✅ Checklist de Entrega
 
-- [X] Correção do Host do PADE para `0.0.0.0` e portas na rede Docker.
-- [X] Transição para mapeamento de volumes via diretório no `docker-compose.yml`.
-- [X] Adaptação do `NetworkNode.ned` com a flag `@mutable` correta.
-- [X] Leitura de arrays de strings simuladas no `MosaikBridge.cc`.
-- [X] Implementação de delay de rede via *Self-Message* no C++.
-- [X] Reestruturação do `first.py` para roteamento linear Mosaik -> OMNeT++ -> Collector.
-- [ ] Validação final dos dados gerados no ficheiro `simulacao_rede.csv`.
-- [ ] Implementação de lógica de resposta FIPA-ACL bidirecional entre os Agentes.
+- [x] Correção do Host do PADE e mapeamento de volumes estável.
+- [x] Implementação de latência dinâmica (Propagação + Transmissão) no C++.
+- [x] Sincronização de resposta dos agentes com o tempo do Mosaik.
+- [x] Implementação de conexões `time_shifted` bidirecionais no `first.py`.
+- [x] Automação da geração de gráficos de desempenho (`grafico_trafego.png`).
+- [x] Validação da integridade de pacotes FIPA-ACL em 20 passos de simulação.
 
 ## 📈 Resultados / Dificuldades
 
-* **Progresso atual:** 95% [█████████-]
-* **Resultados:** A infraestrutura interoperacional em C++ via ZeroMQ no Docker foi totalmente superada. O Mosaik compila o cenário linear com sucesso, o OMNeT++ processa os delays temporalmente corretos de forma interna e o sistema transita do instante inicial até à conclusão da simulação sem crashes.
-* **Dificuldades superadas:** 1. Criação de pastas em vez de ficheiros pelo volume do Docker. 
-  2. Rigidez do C++ do OMNeT++ com strings e variáveis não-mutáveis em tempo de execução. 
-  3. Erros de restrição de grafos direcionados no Mosaik ao tentar rotas circulares.
+* **Progresso atual:** 100% (Fase de Integração Base) [██████████]
+* **Resultados:** Sucesso absoluto na troca de mensagens entre contentores isolados. O sistema provou ser determinístico: mensagens de tamanhos diferentes resultam em latências matematicamente calculáveis e repetíveis. O log final confirmou o processamento de 20 pacotes com sucesso.
+* **Dificuldades superadas:** 1. Dessincronização entre o relógio do Python (Twisted) e o relógio discreto do Mosaik. 2. Perda de mensagens no `t=0` por falta de leitura na inicialização do C++. 3. Interferência de port-scanning externo (TLS Handshakes) confundida com erro de aplicação.
 
-## 📅 Prazo Estimado 
+## 📅 Próximos Passos (Pesquisa)
 
-* Data de entrega pretendida: 01/05/2026
-
-## 📋 Planejamento para conclusão da entrega
-
-* **Passo 1.** Executar a infraestrutura para gerar os logs completos.
-* **Passo 2.** Analisar o ficheiro CSV gerado pelo Collector para confirmar se o payload FIPA-ACL e as latências (15ms) foram registados com sucesso a cada passo da simulação.
-* **Passo 3.** Desenvolver a lógica no PADE para que o Agente B processe a mensagem recebida e envie uma resposta, testando a bidirecionalidade através do Mosaik.
+* Simular cenários de congestionamento (reduzindo a largura de banda no C++).
+* Testar a escalabilidade com o aumento do número de agentes na topologia em estrela.
+* Implementar métricas de jitter e perda de pacotes baseadas em probabilidades estocásticas no OMNeT++.
 
 ---
