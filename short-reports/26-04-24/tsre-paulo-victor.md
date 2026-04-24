@@ -5,7 +5,7 @@ about:
   novas implementações.
 title: "[PESQUISA]: "
 labels: pesquisa, software
-assignees: "[Nome do(a) estudante ou estudantes envolvido(a)s]"
+assignees: "[Paulo Victor Pereira Lima]"
 ---
 
 ## 📌 Descrição da Atividade
