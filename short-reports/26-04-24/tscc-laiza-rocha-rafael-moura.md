@@ -1,6 +1,4 @@
-
 ---
-
 name: "🚀 Relatório de Progresso"
 about: Avanços na Integração OMNeT++ e Mosaik via ZeroMQ para Co-simulação
 title: "[OPENTES - TSCC] Integração e Roteamento de Mensagens FIPA-ACL via OMNeT++ e Mosaik"
