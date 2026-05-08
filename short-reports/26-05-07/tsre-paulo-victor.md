@@ -19,7 +19,7 @@ assignees: "[Paulo Victor Pereira Lima]"
 
 ## 🛠 Contexto Técnico
 
-- **Linguagem/Ferramenta:** (X) Python | ( ) Julia | ( ) Docker | (X)OpenDSS | (X) Mosaik
+- **Linguagem/Ferramenta:** (X) Python | ( ) Julia | (X) Docker | (X)OpenDSS | (X) Mosaik
 - **Repositório no GitHub**: `https://github.com/grei-ufc/tsre-der-opentes`
 - **Branch de Trabalho:** `paulo-victor`
 - **Requisito Associado:** [BR-PVGen](https://www.kaggle.com/datasets/tecsci/brazilian-pv-dataset)
@@ -28,7 +28,7 @@ assignees: "[Paulo Victor Pereira Lima]"
 
 - [x] Código documentado (Docstrings).
 - [x] Testes unitários realizados.
-- [ ] Container Docker atualizado (se aplicável).
+- [x] Container Docker atualizado (se aplicável).
 - [x] Resultados preliminares validados com o Orientador.
 
 ## 📈 Resultados / Dificuldades
