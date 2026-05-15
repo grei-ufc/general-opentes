@@ -1,29 +1,27 @@
----
-name: "🚀 Relatório de Progresso / Nova tarefa"
-about:
-  Utilize este template para documentar avanços em algoritmos, correções ou
-  novas implementações.
-title: "[OPENTES - TSDQ ]: Atualização do sistema de mapeamento dinâmico e padronização de metadados"
-labels: pesquisa, produção científica
-assignees: "[Luiz Alberto Silva Sales Marinho]"
+```bash
+# [OPENTES - TSDQ ]: Atualizações da Interface Home e Correções Estruturais do DataView
+
 ---
 
 ## 📌 Descrição da Atividade
 
-Durante esta etapa foram realizadas atividades relacionadas à melhoria do sistema de leitura, interpretação e visualização de dados provenientes de co-simulações elétricas no OpenTES-TSDQ. As principais modificações envolveram a atualização do arquivo de mapeamento dinâmico (`mapeamento.json`) e a adequação do dashboard Streamlit para interpretação automática de diferentes grandezas elétricas utilizando expressões regulares (regex).
+Durante esta semana foram realizadas melhorias estruturais e funcionais no projeto OpenTES-TSDQ, com foco principal na interface Home do Streamlit, organização do fluxo de processamento dos dados, correções de erros relacionados ao carregamento de imagens e ajustes na integração com Git/GitHub.
 
-Foi realizada a revisão completa da padronização de nomenclatura das colunas utilizadas nos arquivos CSV, incluindo a correção de inconsistências entre unidades, prefixos e sufixos das grandezas elétricas. Também foi feita a separação adequada entre variáveis de geração fotovoltaica, potência de geradores e potência da rede, eliminando ambiguidades durante o processo de classificação automática das colunas.
+As atividades envolveram principalmente:
 
-Além disso, foram implementadas melhorias no algoritmo de autoescala de unidades e na visualização gráfica 2D, incluindo ajuste dinâmico do eixo Y com base nos valores mínimo e máximo do elemento selecionado, permitindo melhor visualização de sinais com baixa amplitude de variação.
+- Reestruturação da lógica de pré-visualização das séries temporais.
+- Organização do fluxo de processamento para evitar chamadas redundantes.
+- Correção de erros relacionados ao carregamento de imagens no Streamlit.
+- Ajustes em integração e sincronização com GitHub.
+- Investigação e depuração de erros do Streamlit envolvendo KeyError.
+- Melhorias na experiência de visualização inicial dos dados carregados.
 
-Também foi desenvolvido e atualizado o manual de padronização de metadados em LaTeX, alinhando sua documentação ao comportamento real implementado no sistema de parsing e mapeamento dinâmico.
-
-Adicionalmente, iniciou-se a implementação de uma nova interface de comunicação para leitura e interpretação de dados provenientes do OMNeT++, permitindo o carregamento de arquivos CSV gerados pela co-simulação de rede de comunicação. 
-
-- **Linguagem/Ferramenta:** ( x ) Python | ( ) Julia | ( ) Docker | (  ) OpenDSS | (  ) Excel | (  ) PowerBI | ( X ) LaTeX | ( X ) VSCode
+- **Linguagem/Ferramenta:** ( x ) Python | ( ) Julia | ( ) Docker | (  ) OpenDSS | (  ) Excel | (  ) PowerBI | (  ) LaTeX | (  ) VSCode
 - **Repositório no GitHub**: (https://github.com/grei-ufc/CBA-2026-Quality-Analysis)
 - **Branch de Trabalho:** `(https://github.com/grei-ufc/CBA-2026-Quality-Analysis/branches)`
-- **Requisito Associado:** (https://github.com/grei-ufc/CBA-2026-Quality-Analysis)
+- **Requisito Associado:** Desenvolvimento da interface de visualização e análise de dados do OpenTES-TSDQ.
+
+---
 
 ## ✅ Checklist de Entrega
 
@@ -31,53 +29,63 @@ Adicionalmente, iniciou-se a implementação de uma nova interface de comunicaç
 - [ ] Testes unitários realizados.
 - [x] Padronização automática de unidades implementada.
 - [x] Correção do algoritmo de autoescala.
-- [x] Elaboração de manual de padronização de colunas.
-- [x] Estudo de obtenção de dados a partir de uma co-simulação.
-- [x] Implementação inicial da interface de comunicação OMNeT++.
-- [x] Suporte para leitura dinâmica de métricas de comunicação.
+- [x] Elaboração de melhorias na visualização da prévia das séries.
+- [x] Correção de erros de carregamento de mídia no Streamlit.
+- [x] Organização do fluxo de processamento da Home.
+- [x] Ajustes de sincronização com Git/GitHub.
 - [ ] Container Docker atualizado (se aplicável).
-- [ ] Resultados preliminares validados com o Orientador.
+- [x] Resultados preliminares validados com o Orientador.
+
+---
 
 ## 📈 Resultados / Dificuldades
 
-- Principais Resultados:
+### Principais Resultados:
 
-  - Implementação de mapeamento dinâmico baseado em regex via JSON.
-  - Correção de conflitos entre potência da rede e geração de potência.
-  - Atualização do sistema de leitura para suportar tensão com e sem identificação de fase.
-  - Melhoria da visualização gráfica com ajuste dinâmico do eixo Y.
-  - Padronização das unidades elétricas para compatibilidade com o dashboard.
-  - Atualização do manual técnico de nomenclatura e metadados.
-  - Adequação do sistema para leitura de dados provenientes de co-simulação.
-  - Implementação de nova aba de comunicação no dashboard Streamlit.
-  - Integração inicial com arquivos CSV exportados pelo OMNeT++.
+- Implementação de melhorias na tela Home do OpenTES-TSDQ para tornar a navegação e leitura dos dados mais intuitiva.
+- Reorganização da lógica de processamento, separando melhor as etapas de leitura, preparação e visualização das séries temporais.
+- Ajuste da funcionalidade de “Pré-visualização da Série”, permitindo exibição mais completa dos dados da coluna selecionada.
+- Correção do erro `MediaFileStorageError` relacionado ao carregamento de imagens locais no Streamlit.
+- Correção e análise de problemas envolvendo `KeyError` durante execução da aplicação.
+- Melhorias no fluxo de atualização do projeto utilizando Git e GitHub.
+- Refinamento estrutural do código visando maior modularidade e manutenção futura.
 
+### Dificuldades encontradas:
 
--  Dificuldades encontradas:
+- Problemas relacionados ao gerenciamento interno de arquivos de mídia do Streamlit.
+- Organização adequada do fluxo de processamento sem gerar redundância na preparação das séries.
+- Ajustes na estrutura da Home para evitar chamadas desnecessárias das funções de processamento.
+- Necessidade de reorganizar a disposição das tabelas de pré-visualização para melhorar a experiência do usuário.
 
-  - Ambiguidade inicial entre padrões regex de potência ativa da rede e geração.
-  - Inconsistências entre unidades descritas no manual e aquelas utilizadas nos arquivos CSV.
-  - Necessidade de tratamento especial para grandezas sem identificação explícita de fase.
-  - Ajuste do algoritmo de autoescala para evitar conversões incorretas de unidades em valores de baixa magnitude.
-  - Necessidade de tratamento específico para arquivos contendo simultaneamente dados numéricos, texto e estruturas JSON provenientes do OMNeT++.
-  - Adequação da estrutura de pivotamento e filtragem de variáveis válidas para visualização gráfica na interface de comunicação.
+- *Progresso atual:* 72%
 
-- *Progresso atual: * 80%
+![Progress](https://progress-bar.xyz/72)
 
-![Progress](https://progress-bar.xyz/80)
+---
 
-## 📎Próxima(s) Atividade(s)
+## 📎 Próxima(s) Atividade(s)
 
-- Expandir os recursos de visualização da comunicação com indicadores estatísticos e eventos de troca de mensagens.
-- Realizar validação dos resultados obtidos com conjuntos reais de dados de co-simulação.
-- Corrigir erro de análise da parte de comuinicação.
+- Continuação da modularização da interface do OpenTES-TSDQ.
+- Implementação de melhorias nas visualizações gráficas 2D e 3D.
+- Aprimoramento do tratamento automático de colunas e unidades.
+- Desenvolvimento de novas funcionalidades para análise de qualidade de energia.
+- Estruturação de validações adicionais para leitura de arquivos.
+- Continuação dos testes da aplicação com diferentes bases de dados.
+
+---
 
 ## 📅 Prazo Estimado
 
 - Data de entrega pretendida: 22/05/2026
 
+---
+
 ## 📋 Planejamento para conclusão da entrega
 
-- Passo 1. Consolidar a padronização de leitura e classificação automática das grandezas.
-- Passo 2. Validar os gráficos e indicadores utilizando diferentes cenários de co-simulação.
-- Passo 3. Integrar métricas de comunicação e métricas elétricas em uma visualização unificada da co-simulação.
+1. Finalizar reorganização estrutural da Home.
+2. Consolidar o fluxo de leitura e preparação das séries.
+3. Realizar validações adicionais com arquivos reais de co-simulação.
+4. Refinar os componentes gráficos e tabelas.
+5. Corrigir inconsistências restantes da interface.
+6. Preparar documentação parcial das funcionalidades implementadas.
+```
