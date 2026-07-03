@@ -9,9 +9,11 @@ assignees: "[Luiz Alberto Silva Sales Marinho]"
 
 ## 📌 Descrição da Atividade
 
+Criação de nova branch para modificação na estrutura da interface. Método de utilizar um arquivo .json criado pelo código a partir do arquivo coordenadas.csv para definir barras importantes a serem apresentadas, mas sem levar em consideração suas posições cartesianas, apenas sua existência. Dessa forma, exclui a plotagem de barras virtuais. 
 
+Estudo para saber a real necessidade de haver umar cosimulação interna à platarforma.
 
-- **Linguagem/Ferramenta:** ( x ) Python | ( ) Julia | ( ) Docker | (  ) OpenDSS | (  ) Excel | (  ) PowerBI | (  ) LaTeX | (  ) VSCode
+- **Linguagem/Ferramenta:** ( x ) Python | ( ) Julia | ( ) Docker | (  ) OpenDSS | (  ) Excel | (  ) PowerBI | (  ) LaTeX | ( x ) VSCode
 - **Repositório no GitHub**: (https://github.com/grei-ufc/CBA-2026-Quality-Analysis)
 - **Branch de Trabalho:** `(https://github.com/grei-ufc/CBA-2026-Quality-Analysis/branches)`
 - **Requisito Associado:** (https://github.com/grei-ufc/CBA-2026-Quality-Analysis)
@@ -19,7 +21,7 @@ assignees: "[Luiz Alberto Silva Sales Marinho]"
 ## ✅ Checklist de Entrega
 
 - [ ] Código documentado (Docstrings).
-- [ ] Testes unitários realizados.
+- [x] Testes unitários realizados.
 - [ ] Padronização automática de unidades implementada.
 - [ ] Correção do algoritmo de autoescala.
 - [ ] Elaboração de manual de padronização de colunas.
@@ -32,24 +34,25 @@ assignees: "[Luiz Alberto Silva Sales Marinho]"
 ## 📈 Resultados / Dificuldades
 
 - Principais Resultados:
-
-
-
-
+  
 -  Dificuldades encontradas:
 
-- *Progresso atual: * %
+Divergência de conceitos para a atualização da interface.
 
-![Progress](https://progress-bar.xyz/)
+
+- *Progresso atual: * 25%
+
+![Progress](https://progress-bar.xyz/25)
 
 ## 📎Próxima(s) Atividade(s)
 
+Gerar arquivo .json para plotagem
 
 
 ## 📅 Prazo Estimado
 
 - Data de entrega pretendida: 
-
+10/07/2026
 ## 📋 Planejamento para conclusão da entrega
 
 
