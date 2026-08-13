@@ -2,7 +2,7 @@
 name: "🚀 Relatório de Progresso / Nova tarefa"
 about:
   Implementação da camada de mercado transativo (SiMTES) sobre a plataforma de
-  co-simulação: 33 agentes PADE negociando a programação de armazenamento numa
+  co-simulação 33 agentes PADE negociando a programação de armazenamento numa
   rede de 75 barras, com rede de comunicação 6TiSCH no laço, validada contra a
   tese de referência.
 title: "[OpenTES / TTESO]: Mercado transativo na MVLV75 — negociação multiagente, rede 6TiSCH e validação contra a tese"
