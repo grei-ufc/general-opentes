@@ -97,7 +97,7 @@ Consolidar os pontos mais importantes dos mini relatórios, destacando:
 
 ### 📅 Prazo
 
-- Data de entrega pretendida: **28/08** (ano não informado).
+- Data de entrega pretendida: **28/08**.
 
 ---
 
