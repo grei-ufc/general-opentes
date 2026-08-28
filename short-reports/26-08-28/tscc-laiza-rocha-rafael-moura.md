@@ -9,7 +9,7 @@ assignees: "Laiza Edwigens Rocha Silva e Rafael dos Santos Moura"
 ## 📌 Descrição da Atividade
 Nessa semana, ...
 <div align="center">
-  <img src="images/print-menu.png" alt="Print do menu antes de co-simular" width="700">
+  <img src="Image/print-menu.png" alt="Print do menu antes de co-simular" width="700">
   <p><i>Figura:print do menu antes de cosimular</i></p>
 </div>
 
