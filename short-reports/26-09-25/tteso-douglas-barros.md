@@ -48,6 +48,18 @@ as decisões medidas do caso IEEE 13. Os quatro documentos antigos continuaram
 nos mesmos caminhos, para não quebrar os links que já existem no repositório. A
 navegação os agrupa sem movê-los.
 
+<img width="1920" height="900" alt="image" src="https://github.com/user-attachments/assets/83f9dada-b452-4812-9681-6048a5615a2b" />
+
+<img width="1920" height="900" alt="image" src="https://github.com/user-attachments/assets/f41c7c4c-5b2b-4cd1-9f49-2035fa5eedeb" />
+
+<img width="1920" height="900" alt="image" src="https://github.com/user-attachments/assets/16490c45-c751-4606-a797-68c95f96b9eb" />
+
+<img width="1920" height="900" alt="image" src="https://github.com/user-attachments/assets/b571f6d2-bc29-45ff-bb3f-644facf23c57" />
+
+Modo claro:
+<img width="1920" height="900" alt="image" src="https://github.com/user-attachments/assets/f55292e6-372b-458e-8c7e-2f9aa699e290" />
+
+
 A ferramenta deu pouco trabalho. O tempo foi para a distância entre o que a
 documentação afirmava e o que o código faz hoje: quatro afirmações estavam
 erradas, e o levantamento está na seção seguinte, junto com um registro obsoleto
