@@ -57,7 +57,7 @@ pdf-engine: xelatex
 
 O time TSCC desenvolveu, entre fevereiro e outubro de 2026, uma plataforma de co-simulação que acopla agentes PADE, o simulador de rede OMNeT++ e o orquestrador Mosaik, executados em três containers Docker e sincronizados em *lock-step* via ZeroMQ. O objetivo é substituir a hipótese de comunicação ideal entre agentes por uma rede com latência, jitter, perda, filas finitas e posição geográfica.
 
-O ponto de partida era um bloqueio de infraestrutura onde o container do OMNeT++ não iniciava. Hoje a plataforma suporta topologias (estrela, malha completa e anel bidirecional) escaláveis até centenas de agentes, tecnologias de enlace (Cabeada, 5G, Wireless, 4G e 2G) atribuíveis por enlace ou por agente, telemetria de alta resolução e dashboards automáticos, tudo configurável por uma interface web ou pelo terminal.
+O ponto de partida era um bloqueio de infraestrutura onde o container do OMNeT++ não iniciava. Hoje a plataforma suporta topologias escaláveis até centenas de agentes, tecnologias de enlace atribuíveis por enlace ou por agente, telemetria de alta resolução e dashboards automáticos, tudo configurável por uma interface web ou pelo terminal.
 
 # Introdução
 
@@ -69,11 +69,11 @@ No projeto OpenTES, o TSCC é responsável pela simulação de comunicação e c
 
 ## Motivação
 
-Em simulações de sistemas multiagentes é comum assumir mensagens instantâneas e sem perdas. Isso impede avaliar a robustez de uma estratégia sob infraestrutura real. A motivação do time foi tornar a rede uma variável experimental: o pesquisador escolhe topologia, tecnologia de enlace e escala, e observa o efeito sobre o tráfego dos agentes. Há também uma motivação de engenharia: conectar ferramentas heterogêneas de forma reprodutível e operável por terceiros, o que levou à conteinerização e às interfaces de configuração.
+Em simulações de sistemas multiagentes é comum assumir mensagens instantâneas e sem perdas. Isso impede avaliar a robustez de uma estratégia sob infraestrutura real. A motivação do time foi tornar a rede uma variável experimenta onde pesquisador escolhe topologia, tecnologia de enlace e escala, e observa o efeito sobre o tráfego dos agentes. Há também uma motivação de engenharia, conectar ferramentas heterogêneas de forma reprodutível e operável por terceiros, o que levou à conteinerização e às interfaces de configuração.
 
 ## Justificativa
 
-A camada de comunicação é o elo entre os demais times do OpenTES. Decisões tomadas nela (formato de mensagem, granularidade temporal, política de filas) condicionam como outros módulos serão acoplados. A revisão bibliográfica da equipe indicou ainda uma lacuna: o trabalho de referência na área, o COSIMA, não detalha a justificativa da estrutura de co-simulação, não compara desempenho entre topologias e não explica a conteinerização.
+A camada de comunicação é o elo entre os demais times do OpenTES. Decisões tomadas nela condicionam como outros módulos serão acoplados. A revisão bibliográfica da equipe indicou ainda uma lacuna, o trabalho de referência na área, o COSIMA, não detalha a justificativa da estrutura de co-simulação, não compara desempenho entre topologias e não explica a conteinerização.
 
 ## Objetivos
 
@@ -92,7 +92,7 @@ Construir e documentar uma plataforma de co-simulação PADE + OMNeT++ + Mosaik 
 
 # Estado da Arte e Revisão Bibliográfica
 
-A revisão concentrou-se na família de trabalhos do COSIMA, que acopla o Mosaik ao OMNeT++ para simular a infraestrutura de comunicação de sistemas de energia. O ponto de partida técnico da equipe foi reproduzir o exemplo do COSIMA em containers. A versão atual não depende do COSIMA: o acoplamento Mosaik–OMNeT++ foi reescrito sobre ZeroMQ, com criação dinâmica de nós a partir de um arquivo NED gerado em tempo de execução.
+A revisão concentrou-se na família de trabalhos do COSIMA, que acopla o Mosaik ao OMNeT++ para simular a infraestrutura de comunicação de sistemas de energia. O ponto de partida técnico da equipe foi reproduzir o exemplo do COSIMA em containers. A versão atual não depende do COSIMA, o acoplamento Mosaik–OMNeT++ foi reescrito sobre ZeroMQ, com criação dinâmica de nós a partir de um arquivo NED gerado em tempo de execução.
 
 O artigo *cosima-mango: Investigating Multi-Agent System robustness through integrated communication simulation* foi revisado em detalhe, com foco na comparação entre os frameworks de SMA PADE e Mango. A Tabela 1 resume a comparação feita pela equipe.
 
@@ -231,19 +231,19 @@ Table: Resultados consolidados nas três topologias suportadas (20 passos, `RAND
 
 ## Discussão
 
-**Diferenciação física entre os perfis de enlace.** Os resultados da Tabela 5 confirmam a aderência do modelo implementado em `AgentNode.cc` e `Profiles.ned` às características físicas de cada tecnologia. A rede **Cabeada** apresenta latência média de 20,1 ms (1,0 ms base somado ao atraso de propagação espacial de $50\,\mu\text{s/m}$ no grid de $1000\times 1000\text{ m}$), jitter nulo (0,0 µs, dado que o atraso-base não excede 1,5 ms) e entrega integral (100,0% de PDR). Os enlaces **Wireless** e **5G** operam com baixa latência (23,9 ms e 26,8 ms), jitter reduzido (0,66 ms a 1,21 ms) e PDR elevado (96,5% a 98,0%). Já o perfil **4G** apresenta latência intermediária de 48,2 ms e jitter de 8,95 ms (PDR de 94,6%), enquanto o canal **2G** (250 kbps, atraso exponencial de 200 ms e PER de 15%) concentra a maior degradação da rede, com latência média de 223,5 ms, jitter de 161,1 ms e queda da taxa de entrega para 84,7%.
+Os resultados da Tabela 5 confirmam a aderência do modelo implementado em `AgentNode.cc` e `Profiles.ned` às características físicas de cada tecnologia. A rede Cabeada apresenta latência média de 20,1 ms (1,0 ms base somado ao atraso de propagação espacial de $50\,\mu\text{s/m}$ no grid de $1000\times 1000\text{ m}$), jitter nulo (0,0 µs, dado que o atraso-base não excede 1,5 ms) e entrega integral (100,0% de PDR). Os enlaces Wireless e 5G operam com baixa latência (23,9 ms e 26,8 ms), jitter reduzido (0,66 ms a 1,21 ms) e PDR elevado (96,5% a 98,0%). Já o perfil 4G apresenta latência intermediária de 48,2 ms e jitter de 8,95 ms (PDR de 94,6%), enquanto o canal **2G** (250 kbps, atraso exponencial de 200 ms e PER de 15%) concentra a maior degradação da rede, com latência média de 223,5 ms, jitter de 161,1 ms e queda da taxa de entrega para 84,7%.
 
-**Comportamento por topologia e conservação de pacotes.** Nas três topologias observa-se conservação exata entre pacotes enviados, recebidos e descartados ($684+63=747$ na estrela; $364+36=400$ na malha; $175+25=200$ no anel). Na topologia **Estrela**, o tráfego converge no agente central, que dispara 20 requisições por passo e recebe as confirmações `INFORM` dos periféricos cujas mensagens superam as perdas de enlace. Na **Malha Completa** ($N=5$), todos os agentes atuam como *peers* simétricos trocando mensagens ponto a ponto sobre os 10 enlaces físicos ($5\times 4\times 20 = 400$ envios). No **Anel Bidirecional** ($N=5$), a comunicação restrita aos dois vizinhos imediatos em ciclo fechado gera 200 transmissões distribuídas igualmente sobre os 5 enlaces.
+ Nas três topologias observa-se conservação exata entre pacotes enviados, recebidos e descartados ($684+63=747$ na estrela; $364+36=400$ na malha; $175+25=200$ no anel). Na topologia Estrela, o tráfego converge no agente central, que dispara 20 requisições por passo e recebe as confirmações `INFORM` dos periféricos cujas mensagens superam as perdas de enlace. Na Malha Completa ($N=5$), todos os agentes atuam como *peers* simétricos trocando mensagens ponto a ponto sobre os 10 enlaces físicos ($5\times 4\times 20 = 400$ envios). No Anel Bidirecional ($N=5$), a comunicação restrita aos dois vizinhos imediatos em ciclo fechado gera 200 transmissões distribuídas igualmente sobre os 5 enlaces.
 
-**Granularidade temporal.** Cada passo do Mosaik corresponde a 1 s simulado, enquanto as latências típicas situam-se na escala de dezenas a centenas de milissegundos. Como os agentes recebem as mensagens no passo seguinte (`time_shifted=True`), as variações de latência e jitter são integralmente registradas na telemetria física do OMNeT++, enquanto o efeito direto sobre a dinâmica de decisão dos agentes PADE ocorre sobretudo por meio do descarte de pacotes.
+Cada passo do Mosaik corresponde a 1 s simulado, enquanto as latências típicas situam-se na escala de dezenas a centenas de milissegundos. Como os agentes recebem as mensagens no passo seguinte (`time_shifted=True`), as variações de latência e jitter são integralmente registradas na telemetria física do OMNeT++, enquanto o efeito direto sobre a dinâmica de decisão dos agentes PADE ocorre sobretudo por meio do descarte de pacotes.
 
 # Conclusão
 
-Os objetivos estabelecidos para o TSCC foram integralmente alcançados. A plataforma integra PADE, Mosaik e OMNeT++ em containers Docker sincronizados via ZeroMQ (Objetivo 1), modela latência, jitter, perda de pacotes por canal e por distância e filas finitas em cinco tecnologias de enlace (Objetivo 2), suporta geração dinâmica e escalável das topologias estrela, malha completa e anel bidirecional (Objetivo 3), fornece telemetria detalhada em CSV e dashboards automáticos por tecnologia e topologia (Objetivo 4), e dispõe de interfaces de configuração via navegador (`menu-streamlit.py`) e terminal (`menu.py`), além de suíte de testes automatizados com `pytest` (Objetivo 5).
+A plataforma integra PADE, Mosaik e OMNeT++ em containers Docker sincronizados via ZeroMQ, modela latência, jitter, perda de pacotes por canal e por distância e filas finitas em tecnologias de enlace, suporta geração dinâmica e escalável das topologias estrela, malha completa e anel bidirecional, fornece telemetria detalhada em CSV e dashboards por tecnologia e topologia, e dispõe de interfaces de configuração via navegador (`menu-streamlit.py`) e terminal (`menu.py`), além de suíte de testes automatizados com `pytest`.
 
 Como próximos passos do projeto, destacam-se:
 
-1. **Execução de campanhas experimentais multi-semente** (variando `RANDOM_SEED`) para consolidação estatística dos resultados no artigo científico em elaboração (Objetivo 6).
+1. **Execução de campanhas experimentais multi-semente** (variando `RANDOM_SEED`) para consolidação estatística dos resultados no artigo científico em elaboração.
 2. **Refinamento da resolução temporal (`time_resolution` sub-segundo) e implementação de fragmentação por MTU**, ampliando a sensibilidade da co-simulação a atrasos sub-segundo e payloads extensos.
 3. **Acoplamento da plataforma de comunicação aos módulos dos demais times do OpenTES** (TSRE, TSDQ e TTESO), permitindo avaliar algoritmos de mercado transativo e controle de redes elétricas sob condições realistas de comunicação.
 
