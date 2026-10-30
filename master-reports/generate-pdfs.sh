@@ -77,7 +77,7 @@ fi
 for input in "${inputs[@]}"; do
   output="${input%.md}.pdf"
   echo "Gerando $(basename "$output")..."
-  pandoc "$input" --pdf-engine=xelatex -o "$output"
+  pandoc "$input" --citeproc --pdf-engine=xelatex -o "$output"
 done
 
 echo "Concluído: ${#inputs[@]} PDF(s) gerado(s) em $SCRIPT_DIR."
