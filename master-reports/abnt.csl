@@ -267,6 +267,9 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
           </else>
         </choose>
       </if>
+      <else-if variable="container-title">
+        <text variable="container-title" text-case="uppercase" suffix=". "/>
+      </else-if>
     </choose>
   </macro>
   <!--A macro 'issued' e utilizada quando devemos mostrar a data completa exemplo: 03 mar. 2011.-->
@@ -638,6 +641,7 @@ em caixa alta. Utiliza-se antes do nome da conferencia a expressao "In". Segundo
           <!--Editor-->
           <text macro="issued" suffix=". "/>
           <!--Data-->
+          <text variable="note" suffix=". "/>
           <text macro="access"/>
           <!--URL, data do acesso-->
         </else-if>
