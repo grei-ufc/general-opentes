@@ -241,32 +241,37 @@ Integrantes:
 
 ### Organização dos repositórios no GitHub
 
-Os seguintes repositórios estarão integrados a cada time de desenvolvimento:
+Os seguintes repositórios estão integrados a cada time de desenvolvimento:
 
-1. [https://github.com/grei-ufc/tscc-com-opentes](https://github.com/grei-ufc/tscc-com-opentes):
+1. [https://github.com/grei-ufc/co-simulation-opentes](https://github.com/grei-ufc/co-simulation-opentes):
+   Repositório da plataforma de co-simulação multidomínio, que reúne os
+   trabalhos dos times TSCC, TTESO e TSRE. Integra os agentes (PADE), a rede de
+   comunicação (OMNeT++), a rede elétrica (OpenDSS) e o orquestrador Mosaik, cada
+   um em seu contêiner, com o mercado transativo sobre o alimentador IEEE 13
+   barras como caso de aplicação.
+2. [https://github.com/grei-ufc/tscc-com-opentes](https://github.com/grei-ufc/tscc-com-opentes):
    Repositório de código para armazenar as soluções desenvolvidas de simulação
    de comunicação.
-2. [https://github.com/grei-ufc/tscc-fmi-opentes](https://github.com/grei-ufc/tscc-fmi-opentes):
-   repositório de código para armazenar as soluções desenvolvidas de integração
-   de simuladores em co-simulação.
-3. [https://github.com/grei-ufc/tteso-tes-opentes](https://github.com/grei-ufc/tteso-tes-opentes):
+3. [https://github.com/grei-ufc/tteso-market-opentes](https://github.com/grei-ufc/tteso-market-opentes):
    Repositório de código para armazenar as soluções desenvolvidas de sistemas de
-   energia transativos.
-4. [https://github.com/grei-ufc/tteso-prosumer-opentes](https://github.com/grei-ufc/tteso-prosumer-opentes):
-   Repositório de código para armazenar as soluções desenvolvidas de otimização
-   de prosumidor.
-5. [https://github.com/grei-ufc/tsre-grid-opentes](https://github.com/grei-ufc/tsre-grid-opentes):
-   Repositório de código para armazenar as soluções desenvolvidas de simulação
-   da rede elétrica.
-6. [https://github.com/grei-ufc/tsre-der-opentes](https://github.com/grei-ufc/tsre-der-opentes):
+   energia transativos: o modelo de mercado (prosumidor, concentrador, operador
+   e mercado), a decomposição dual, a fase de operação e a liquidação.
+4. [https://github.com/grei-ufc/tteso-agents-opentes](https://github.com/grei-ufc/tteso-agents-opentes):
+   Repositório de código para armazenar os agentes de mercado desenvolvidos
+   sobre o PADE 3.0 e os exemplos da plataforma usados no projeto.
+5. [https://github.com/grei-ufc/tsre-der-opentes](https://github.com/grei-ufc/tsre-der-opentes):
    Repositório de código para armazenar as soluções desenvolvidas de simulação
    de recursos energéticos distribuídos.
-7. [https://github.com/grei-ufc/tsdq-dataview-opentes](https://github.com/grei-ufc/tsdq-dataview-opentes):
+6. [https://github.com/grei-ufc/tsdq-dataview-opentes](https://github.com/grei-ufc/tsdq-dataview-opentes):
    Repositório de código para armazenar as soluções desenvolvidas para
    visualização de dados da co-simulação.
-8. [https://github.com/grei-ufc/tsdq-quality-opentes](https://github.com/grei-ufc/tsdq-quality-opentes):
+7. [https://github.com/grei-ufc/tsdq-quality-opentes](https://github.com/grei-ufc/tsdq-quality-opentes):
    Repositório de código para armazenar as soluções desenvolvidas para análises
    de qualidade de energia.
+
+O PADE, plataforma de agentes usada pelo projeto, é mantido no repositório
+próprio [https://github.com/grei-ufc/pade](https://github.com/grei-ufc/pade) e
+publicado no índice de pacotes do Python como `pade-agents`.
 
 Também é importante a criação do repositório de organização do projeto para
 registrar algumas questões organizacionais que envolvam o projeto como um
