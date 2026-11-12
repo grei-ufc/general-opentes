@@ -1,4 +1,3 @@
-
 ---
 title: "Relatório Final de Projeto — ARGOS"
 subtitle: "Visualização de resultados de co-simulação e qualidade de energia elétrica"
