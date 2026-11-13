@@ -19,10 +19,7 @@ linestretch: 1.5
 mainfont: "EB Garamond"
 sansfont: "DejaVu Sans"
 monofont: "DejaVu Sans Mono"
-colorlinks: true
-linkcolor: blue
-urlcolor: blue
-citecolor: blue
+colorlinks: false
 geometry:
   - top=2.7cm
   - bottom=2.7cm
