@@ -27,7 +27,6 @@
 11. Rafael Moura \- graduando e desenvolvedor júnior.
 12. Francisco Douglas \- graduando e desenvolvedor júnior.
 13. Laiza Edwiges \- graduanda e desenvolvedora júnior.
-14. IC 6 \- Vaga a ser implementada em caso de necessidade.
 
 O sistema de acompanhamento de projetos do _Github_ será nossa base de
 acompanhamento e irá centralizar cada etapa de gerenciamento dos projetos.
@@ -60,10 +59,6 @@ foi gerada na fase inicial de concepção do projeto `OpenTES`.
 
 <div align="center">
   <img src="diagrama.png" width="80%">
-  
-   Fig. 1: Representação gráfica das entregas propostas na fase de composição do
-   projeto.
-
 </div>
 
 ## Especificação detalhada das entregas do projeto
@@ -77,9 +72,7 @@ outro elementos importantes que também são esperadas entregas acadêmicas:
 - 2 dissertação de mestrado e 1 tese de doutorado.
 
 <div align="center">
-<img src="images/opentes-02.png" width="60%">
-   
-   Fig. 2: Representação gráfica dos objetivos do projeto.
+  <img src="images/opentes-02.png" width="60%">
 </div>
 
 A situação atual das entregas é a seguinte:
@@ -143,10 +136,7 @@ Na Figura 3 estão representados de forma gráfica os times de desenvolvimento d
 projeto, com os os nomes de cada membro.
 
 <div align="center">
-<img src="images/opentes-01.png" width="50%">
-   
-   Fig. 3: Representação gráfica dos times de desenvolvimento e seus respectivos
-objetos de desenvolvimento.
+  <img src="images/opentes-01.png" width="50%">
 </div>
 
 Siglas dos times de desenvolvimento:
